@@ -44,7 +44,7 @@ data "aws_ami" "ubuntu" {
 
   owners = ["099720109477"] # Canonical
 }
-
+/*
 resource "aws_instance" "web" {
   ami                    = data.aws_ami.ubuntu.id
   instance_type          = "t2.micro"
@@ -76,7 +76,7 @@ resource "aws_security_group" "web-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
+*/
 output "web-address" {
   value = "${aws_instance.web.public_dns}:8080"
 }
